@@ -14,11 +14,9 @@ So there are a few basic parts to getting this working, the first part that is b
 
 ## SQLite Database Schema
 
-```
-CREATE TABLE users (username VARCHAR(128) NOT NULL, domain VARCHAR(128) NOT NULL, home VARCHAR(256) NOT NULL,password VARCHAR(64) NOT NULL, uid INTEGER NOT NULL, gid INTEGER, active CHAR(1) DEFAULT 'Y' NOT NULL);  
-CREATE TABLE alias (user VARCHAR NOT NULL, alias VARCHAR NOT NULL);  
-CREATE TABLE domains (domain VARCHAR(256) NOT NULL, active CHAR(1) DEFAULT 'Y' NOT NULL);  
-```
+    CREATE TABLE users (username VARCHAR(128) NOT NULL, domain VARCHAR(128) NOT NULL, home VARCHAR(256) NOT NULL,password VARCHAR(64) NOT NULL, uid INTEGER NOT NULL, gid INTEGER, active CHAR(1) DEFAULT 'Y' NOT NULL);  
+    CREATE TABLE alias (user VARCHAR NOT NULL, alias VARCHAR NOT NULL);  
+    CREATE TABLE domains (domain VARCHAR(256) NOT NULL, active CHAR(1) DEFAULT 'Y' NOT NULL);  
   
 Each of the tables handle different things,  
 
