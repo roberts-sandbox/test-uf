@@ -1,6 +1,7 @@
-#wrapper {
-float:left;
+.wrapper {
+  width:860px;
+  margin:0 auto;
 }
-#main {
+.main {
 float:left;
 }
