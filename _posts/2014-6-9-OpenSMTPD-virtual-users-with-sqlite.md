@@ -27,13 +27,16 @@ Each of the tables handle different things,
   
 So the other moving part is telling OpenSMTPD how to create the tables which is done in a simple flat configuration file.
 
-## SQLiteTables.conf  
 
-    dbpath                  /etc/mail/authdb.sqlite;  
-    query_alias             select alias from alias where user=?;  
-    query_domain            select domain from domains where domain=? and active="Y";  
-    query_userinfo          select uid,gid,home from users where username=? and active="Y";  
-    query_credentials       select username, password from users where (username||'@'||domain)=? and active="Y";  
+## SQLiteTables.conf
+```
+dbpath                  /etc/mail/authdb.sqlite;
+query_alias             select alias from alias where user=?;
+query_domain            select domain from domains where domain=? and active="Y";
+query_userinfo          select uid,gid,home from users where username=? and active="Y";
+query_credentials       select username, password, from users where (username||'@'||domain)=? and active="Y";
+```
+
 
 So lets take it line by line and explain it:  
   
@@ -49,7 +52,7 @@ This will be run when SMTPD does a lookup call for DOMAIN. It will replace the ?
 `query_userinfo          select uid,gid,home from users where username=? and active="Y";`
  This will be run when SMTPD does a lookup call for USERINFO. It will replace the ? with the left hand side of the SMTP address to produce a valid user, if it returns 0 or -1 the look up will fail. So the query becomes select uid,gid,home from users where username=foo and active="Y"; and it expects 3 fields to be returned the first is an int which will be used as a UID, the second is an int to be used as a gid, and the third is a varchar to be used as the path to the users mail home. This also has the active="Y" for the same reason as domain and it is completely optional.
 
-`query_credentials       select username, password from users where (username||'@'||domain)=? and active="Y";`  
+`query_credentials       select username, password from users where (username||'@'||domain)=? and active="Y";`  
 This will be run when SMTPD does a lookup call for CREDENTIALS. This replaces ? with whatever is given as the username. This does have 2 required fields a varchar for username and a varchar for password. But this is where some of the magic comes in, if you have a virtual setup that requires users login as user@domain.com you will need to concatenate 2 of the columns together to get the log on name as user@domain.com, `(username||'@'||domain)=?` will do this.
   
 The last moving part is the SMTPD.conf  
