@@ -167,6 +167,10 @@ small {
   font-size:10px;
 }
 
+postheading {
+  font-size:25px;
+}
+
 hr {
   border:0;
   background:#e5e5e5;
