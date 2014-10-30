@@ -96,7 +96,7 @@ img {
 header {
   width:280px;
   float:left;
-  /*position:fixed;*/
+  position:fixed;
 }
 
 header ul {
@@ -175,7 +175,7 @@ hr {
 }
 
 footer {
-  width:270px;
+  width:250px;
   float:left;
   position:fixed;
   bottom:50px;
