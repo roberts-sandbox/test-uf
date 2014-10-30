@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/layout.css">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
   </head>
   <body>
     <div class="wrapper">
       <header>
         <h1><a href="/">Corrupted IO</a></h1>
-	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
+	<a href="{{ site.url }}/feed.xml">Stalk this page with RSS</a>
       </header>
       <section id="main">
         {{ content }}
