@@ -29,12 +29,14 @@ So the other moving part is telling OpenSMTPD how to create the tables which is 
 
 ## SQLiteTables.conf  
 
+```
 dbpath                  /etc/mail/authdb.sqlite;  
 query_alias             select alias from alias where user=?;  
 query_domain            select domain from domains where domain=? and active="Y";  
 query_userinfo          select uid,gid,home from users where username=? and active="Y";  
 query_credentials       select username, password from users where (username||'@'||domain)=? and active="Y";  
-  
+```
+
 So lets take it line by line and explain it:  
   
 `dbpath                  /etc/mail/authdb.sqlite`  
