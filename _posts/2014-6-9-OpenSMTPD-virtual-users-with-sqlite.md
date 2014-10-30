@@ -26,6 +26,7 @@ Each of the tables handle different things,
 So the other moving part is telling OpenSMTPD how to create the tables which is done in a simple flat configuration file.
 
 ###SQLiteTables.conf  
+
 ```
 dbpath                  /etc/mail/authdb.sqlite  
 query_alias             select alias from alias where user=?;  
