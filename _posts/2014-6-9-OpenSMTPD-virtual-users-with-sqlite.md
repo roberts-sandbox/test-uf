@@ -58,13 +58,13 @@ The last moving part is the SMTPD.conf
   
 ##SMTPD.CONF
   
-so near the top of the config you'll have to drop all your table declarations or at least the auth one, but I like to keep them together. The defs would look like:  
+so near the top of the config define all your table declarations or at least the auth one, but I like to keep them together. The defs would look like:  
 
     table domains sqlite:/etc/mail/sqlite  
     table users sqlite:/etc/mail/sqlite  
     table sqalias sqlite:/etc/mail/sqlite  
    
-the next part to deal with is getting auth with your selected port, I require auth on submission to actually submit mail and that looks like:
+the next part to deal with is getting auth with your selected port, I require auth on submission and I also try to hide the clients IP address, it looks somthing like:
   
 `listen on all port submission tls auth pki mail.serversave.us mask-source`
   
