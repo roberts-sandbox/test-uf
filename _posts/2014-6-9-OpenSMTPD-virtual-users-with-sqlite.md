@@ -26,37 +26,37 @@ Each of the tables handle different things,
 So the other moving part is telling OpenSMTPD how to create the tables which is done in a simple flat configuration file.
 
 ###SQLiteTables.conf  
-```
+'''
 dbpath                  /etc/mail/authdb.sqlite  
 query_alias             select alias from alias where user=?;  
 query_domain            select domain from domains where domain=? and active="Y";  
 query_userinfo          select uid,gid,home from users where username=? and active="Y";  
 query_credentials       select username, password from users where (username||'@'||domain)=? and active="Y";  
-```
+'''
   
 So lets take it line by line and explain it:  
   
-`dbpath                  /etc/mail/authdb.sqlite  
+'dbpath                  /etc/mail/authdb.sqlite'  
 This line tells you simply where the sqlite database is going to be.  
 
-`query_alias             select alias from alias where user=?;  
+'query_alias             select alias from alias where user=?;'  
 This will respond when SMTPD does look up call for ALIAS. It will run the SQL command replacing ? with the left hand side of the SMTP address. so if you look up foo@bar.com and it is aliased to bar@bar.com the query will be select alias from where user='foo'; and return bar@bar.com. it expects 1 field to be returned as a varchar.
   
-`query_domain            select domain from domains where domain=? and active="Y";  
+'query_domain            select domain from domains where domain=? and active="Y";'  
 This will be run when SMTPD does a lookup call for DOMAIN. It will replace the ? with the right hand side of the SMTP address, so if you have foo@bar.com it will become select domain from domains where domain='bar.com' and active="Y"; and if both conditions are met in the query it will return bar.com. This expects 1 field to be returned as a varchar. Now you will notice I have a static value at the end of the query active="Y", That is completely optional, what it allows me to do is disable a domain without removing it from the table. In theory with that and a comments column I could keep track of why a domain was removed from the default domains table.
 
-`query_userinfo          select uid,gid,home from users where username=? and active="Y";  
+'query_userinfo          select uid,gid,home from users where username=? and active="Y";'
  This will be run when SMTPD does a lookup call for USERINFO. It will replace the ? with the left hand side of the SMTP address to produce a valid user, if it returns 0 or -1 the look up will fail. So the query becomes select uid,gid,home from users where username=foo and active="Y"; and it expects 3 fields to be returned the first is an int which will be used as a UID, the second is an int to be used as a gid, and the third is a varchar to be used as the path to the users mail home. This also has the active="Y" for the same reason as domain and it is completely optional.
 
-`query_credentials       select username, password from users where (username||'@'||domain)=? and active="Y";  
-This will be run when SMTPD does a lookup call for CREDENTIALS. This replaces ? with whatever is given as the username. This does have 2 required fields a varchar for username and a varchar for password. But this is where some of the magic comes in, if you have a virtual setup that requires users login as user@domain.com you will need to concatenate 2 of the columns together to get the log on name as user@domain.com, (username||'@'||domain)=? will do this.
+'''query_credentials       select username, password from users where (username||'@'||domain)=? and active="Y";'''  
+This will be run when SMTPD does a lookup call for CREDENTIALS. This replaces ? with whatever is given as the username. This does have 2 required fields a varchar for username and a varchar for password. But this is where some of the magic comes in, if you have a virtual setup that requires users login as user@domain.com you will need to concatenate 2 of the columns together to get the log on name as user@domain.com, '''(username||'@'||domain)=?''' will do this.
   
 The last moving part is the SMTPD.conf  
   
-###SMTPD.CONF
+##SMTPD.CONF
   
 so near the top of the config you'll have to drop all your table declarations or at least the auth one, but I like to keep them together. The defs would look like:  
-```
+'''
 table domains sqlite:/etc/mail/sqlite
 table users sqlite:/etc/mail/sqlite
 table sqalias sqlite:/etc/mail/sqlite
@@ -64,10 +64,10 @@ table sqalias sqlite:/etc/mail/sqlite
    
 the next part to deal with is getting auth with your selected port, I require auth on submission to actually submit mail and that looks like:
   
-`listen on all port submission tls auth pki mail.serversave.us mask-source
+'listen on all port submission tls auth pki mail.serversave.us mask-source'
   
 then you have to tell your server to accept mail for the virtual user base:
   
-`accept from any for domain alias userbase deliver to mbox
+'accept from any for domain alias userbase deliver to mbox'
   
 and with all that in place you should be authing and delivering to virtual users.
