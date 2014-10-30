@@ -13,10 +13,11 @@ So boys and girls I managed to get virtual users with username@domain.tld to wor
 So there are a few basic parts to getting this working, the first part that is beyond the scope of this is getting dovecot to accept your virtual users using SQLite and do user@domain.tld for auth. The second part of it is setting up the database, below is the schema I have for mine, It needs to be tuned a lot but this works.
 
 ## SQLite Database Schema
-
+```SQL
     CREATE TABLE users (username VARCHAR(128) NOT NULL, domain VARCHAR(128) NOT NULL, home VARCHAR(256) NOT NULL,password VARCHAR(64) NOT NULL, uid INTEGER NOT NULL, gid INTEGER, active CHAR(1) DEFAULT 'Y' NOT NULL);  
     CREATE TABLE alias (user VARCHAR NOT NULL, alias VARCHAR NOT NULL);  
     CREATE TABLE domains (domain VARCHAR(256) NOT NULL, active CHAR(1) DEFAULT 'Y' NOT NULL);  
+```
   
 Each of the tables handle different things,  
 
