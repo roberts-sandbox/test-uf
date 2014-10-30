@@ -1,2 +1,5 @@
 highlighter: pygments
 markdown: redcarpet
+name: Corrupted IO Tech Log
+description: A tech log
+url: http://blog.corrupted.io
