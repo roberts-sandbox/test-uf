@@ -1,5 +1,5 @@
 ---
-layout: defaukt
+layout: default
 title: Thanks Freenode!
 ---
 
