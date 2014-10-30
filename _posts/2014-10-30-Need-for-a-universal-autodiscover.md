@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Need for a universal autodiscover for email clients.
 ---
 
