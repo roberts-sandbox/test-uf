@@ -21,6 +21,7 @@ CREATE TABLE domains (domain VARCHAR(256) NOT NULL, active CHAR(1) DEFAULT 'Y' N
 ```
   
 Each of the tables handle different things,  
+
 * users: All users, passwords, and user info are stored here.  
 * alias: Just like it sounds its a replacement for the alias file anything in user will be resolved to alias  
 * domains: a list of domains that are accepted for delivery  
@@ -31,9 +32,13 @@ So the other moving part is telling OpenSMTPD how to create the tables which is 
 
 ```  
 dbpath                  /etc/mail/authdb.sqlite;  
+
 query_alias             select alias from alias where user=?;  
+
 query_domain            select domain from domains where domain=? and active="Y";  
+
 query_userinfo          select uid,gid,home from users where username=? and active="Y";  
+
 query_credentials       select username, password from users where (username||'@'||domain)=? and active="Y";  
 ```  
 
