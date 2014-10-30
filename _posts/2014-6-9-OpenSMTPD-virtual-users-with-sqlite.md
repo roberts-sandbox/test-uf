@@ -3,7 +3,7 @@ layout: default
 title: OpenSMTPD virtual users using SQLite
 ---
 So boys and girls I managed to get virtual users with username@domain.tld to work with OpenSMTPD, and let me explain it off to you all.
-##Prereqs:
+###Prereqs:
   
     This assumes you already have virtual users setup for your selected LDA/MDA/IMAP/etc server and it understands how to deal with a blowfish password since OpenSMTPD is really just acting as an MTA.
      SQLite3, I may do an LDAP and postgresql one down the line but for this I made an executive call and used SQLite since that backend was the most stable at the time I started this oddessy
