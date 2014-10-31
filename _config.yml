@@ -6,8 +6,3 @@ description: A tech log
 url: http://blog.corrupted.io
 paginate: 10
 paginate_path: "blog/page:num"
-
-analytics:
-    provider: google
-    google:
-        tracking_id: 'UA-56275692-1'
