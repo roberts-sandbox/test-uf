@@ -5,7 +5,9 @@ title: GitHub Pages..
 
 #My First week with GitHub Pages.  
 So I decided that I wanted to have my tech log here hosted somewhere and wanted easy static sites. 
+
 <!--more-->
+
 Looking around at various solutions I decided since I already make good use of my GitHub account for many things why not play with GitHub Pages.  
 So GitHub's documentation was easy enough to follow and get Jekyll to spit out a pretty basic site with a pretty basic layout.  
 But it just sort of felt like there was things missing in how it worked and was just too simple.  
