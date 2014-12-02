@@ -1,6 +1,7 @@
 ---
 layout: default
 title: GitHub Pages..
+tags: [thoughts]
 ---
 
 #My First week with GitHub Pages.  
