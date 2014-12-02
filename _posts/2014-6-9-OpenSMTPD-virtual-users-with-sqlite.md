@@ -1,6 +1,7 @@
 ---
 layout: default
 title: OpenSMTPD virtual users using SQLite
+tags: [sqlite,OpenSMTPD,virtual users,how-to]
 ---
 So boys and girls I managed to get virtual users with username@domain.tld to work with OpenSMTPD, and let me explain it off to you all.  
 
