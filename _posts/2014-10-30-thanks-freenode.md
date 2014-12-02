@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Thanks Freenode!
+tags: [thoughts]
 ---
 
 # Finally and thank you Freenode.  
