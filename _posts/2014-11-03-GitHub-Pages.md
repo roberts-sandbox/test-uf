@@ -1,6 +1,6 @@
 ---
 layout: default
-title: GitHub Pages..
+title: GitHub Pages
 tags: [thoughts]
 ---
 
