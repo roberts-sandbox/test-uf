@@ -8,16 +8,16 @@ paginate: 10
 paginate_path: "blog/page:num"
 defaults:
 -
-	scope:
-		path: ""
-		type: "posts"
-	values:
-		layout: "default"
-		author: "Jason Barbier"
+    scope:
+        path: ""
+        type: "posts"
+    values:
+        layout: "default"
+        author: "Jason Barbier"
 -
-	scope:
-		path: ""
-		type: "pages"
-	values:
-		layout: "default"
-		author: "Jason Barbier"
+    scope:
+        path: ""
+        type: "pages"
+    values:
+        layout: "default"
+        author: "Jason Barbier"
