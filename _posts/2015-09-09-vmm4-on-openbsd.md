@@ -17,7 +17,7 @@ for it) But it is a very exciting prospect to have a stripped and secure by defa
 since OpenBSDs network layer has proven to be robust and reliable.
 
 As we can tell by what he posted on
-[PasteBin](http://pastebin.com/B6bs3FB4)
+[PasteBin](http://pastebin.com/B6bs3FB4) and [Twitter](https://twitter.com/mlarkin2012/status/640755032875360256) 
 he has had quite a bit of success so far and has got as far as getting one of the
 RAMDISK kernels to run within vmm(4). I would suggest for sure donating to the
 [OpenBSD Foundation](http://www.openbsdfoundation.org/)
