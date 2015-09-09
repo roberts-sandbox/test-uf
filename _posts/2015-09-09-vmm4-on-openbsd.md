@@ -15,8 +15,7 @@ twitter it is going well. I am very excited to see this and am trying to stay tu
 my hope is that it is eventually compatible with libvirt (or that libvirt gets some modules
 for it) But it is a very exciting prospect to have a stripped and secure by default host especially
 since OpenBSDs network layer has proven to be robust and reliable.
-
-As we can tell by what he posted on
+So far it seems that he has mad some great progress and according to his   
 [PasteBin](http://pastebin.com/B6bs3FB4) and [Twitter](https://twitter.com/mlarkin2012/status/640755032875360256) 
 he has had quite a bit of success so far and has got as far as getting one of the
 RAMDISK kernels to run within vmm(4). I would suggest for sure donating to the
