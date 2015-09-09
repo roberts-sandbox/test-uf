@@ -1,7 +1,7 @@
 highlighter: pygments
 pygments: true
 markdown: redcarpet
-name: Corrupted IO Tech Log
+name: A Corrupted Tech Log
 description: A tech log
 url: https://blog.corrupted.io
 paginate: 10
