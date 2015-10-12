@@ -1,7 +1,7 @@
 ---
 layout: default
 title: UEFI on OpenBSD
-date: 2015-10-11 20:58:00 -0800
+date: 2015-10-12 03:58:00 -0000
 tags: 
     - OpenBSD
     - UEFI
