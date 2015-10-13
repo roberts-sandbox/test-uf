@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Upcomming Bsides PDX Conference.
-Date: 2015-10-13 12:00:00 +/-0000
-published: false
+Date: 2015-10-13 13:00:00 +/-0000
+published: true
 tags: 
     - Conferences
 ---
