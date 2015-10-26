@@ -6,7 +6,8 @@ published: true
 tags: 
     - Conferences
 ---
-#Bsides PDX
+#Bsides PDX  
+
 Here toward the end of the week I will be out at the Bsides PDX security conference. 
 
 <!--more-->
