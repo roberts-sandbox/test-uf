@@ -1,6 +1,6 @@
-highlighter: pygments
-pygments: true
-markdown: redcarpet
+#highlighter: pygments
+#pygments: true
+#markdown: redcarpet
 name: A Corrupted Tech Log
 description: A tech log
 url: https://blog.corrupted.io
