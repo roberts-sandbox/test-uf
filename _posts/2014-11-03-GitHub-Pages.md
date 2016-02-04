@@ -3,8 +3,7 @@ layout: default
 title: GitHub Pages
 tags: [thoughts]
 ---
-
-#My First week with GitHub Pages.  
+# My First week with GitHub Pages.  
 So I decided that I wanted to have my tech log here hosted somewhere and wanted easy static sites. 
 
 <!--more-->
